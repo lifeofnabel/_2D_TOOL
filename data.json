@@ -1,0 +1,75 @@
+[
+  {
+    "site": {
+      "coordinates": [0, 0, 500, 800]
+    },
+    "devices": [[
+      {
+        "id": "1L",
+        "name": "Parkplatz 1L",
+        "coordinates": [10, 10, 210, 110],
+        "color": "green",
+        "disabled": true,
+        "electricity": false
+      },
+      {
+        "id": "2L",
+        "name": "Parkplatz 2L",
+        "coordinates": [10, 120, 210, 220],
+        "color": "green",
+        "disabled": true,
+        "electricity": true
+      },
+      {
+        "id": "3L",
+        "name": "Parkplatz 3L",
+        "coordinates": [10, 230, 210, 330],
+        "color": "red",
+        "disabled": true,
+        "electricity": false
+      },
+      {
+        "id": "3LL",
+        "name": "Parkplatz 3LL",
+        "coordinates": [10, 340, 210, 440],
+        "color": "green",
+        "disabled": true,
+        "electricity": false
+      },
+      {
+        "id": "1R",
+        "name": "Parkplatz 1R",
+        "coordinates": [270, 10, 480, 110],
+        "color": "green",
+        "disabled": false,
+        "electricity": false
+      },
+      {
+        "id": "2R",
+        "name": "Parkplatz 2R",
+        "coordinates": [270, 120, 480, 220],
+        "color": "grey",
+        "disabled": false,
+        "electricity": false
+      },
+      {
+        "id": "3R",
+        "name": "Parkplatz 3R",
+        "coordinates": [270, 230, 480, 330],
+        "color": "green",
+        "disabled": false,
+        "electricity": false
+      },
+      {
+        "id": "4R",
+        "name": "Parkplatz 4R",
+        "coordinates": [270, 340, 480, 440],
+        "color": "green",
+        "disabled": false,
+        "electricity": false
+      }
+
+    ]
+    ]
+  }
+]

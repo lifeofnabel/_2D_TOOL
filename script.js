@@ -1,38 +1,40 @@
-// Funktion zum Erstellen einer Karte
-function createMap() {
-    // Hier sollte der Code stehen, um Ihre Karte zu initialisieren.
-    // Beispiel: new google.maps.Map(document.getElementById('map'), {...});
-}
 
-// Funktion zum Setzen einer Markierung auf der Karte
-function setMarker(map, latitude, longitude) {
-    // Hier sollte der Code stehen, um eine Markierung auf Ihrer Karte zu setzen.
-    // Beispiel: new google.maps.Marker({position: {lat: latitude, lng: longitude}, map: map});
-}
-
-// Hauptfunktion zum Erstellen der Parkplatzkarte
-function createParkingMap() {
+document.addEventListener('DOMContentLoaded', function() {
     fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            // Karte erstellen
-            const map = createMap();
+    .then(response => response.json())
+    .then(jsonData => {
+        var siteContainer = document.getElementById('siteContainer');
 
-            // Durchlaufen jedes Parkplatzes in der JSON-Datei
-            data.forEach(item => {
-                const parkLot = item.site.parkLot;
+        // Assuming jsonData is an array with one element representing the site
+        var siteData = jsonData[0];
+        if (!siteData || !siteData.site || !siteData.devices || !Array.isArray(siteData.devices[0])) {
+            console.error('Fehlerhafte Site-Daten:', siteData);
+            return;
+        }
 
-                // Hier setzen wir Markierungen für jede Ecke des Parkplatzes
-                setMarker(map, parkLot.upperLeft.lat, parkLot.upperLeft.long);
-                setMarker(map, parkLot.lowerLeft.lat, parkLot.lowerLeft.long);
-                setMarker(map, parkLot.upperRight.lat, parkLot.upperRight.long);
-                setMarker(map, parkLot.lowerRight.lat, parkLot.lowerRight.long);
-            });
-        })
-        .catch(error => {
-            console.error('Fehler beim Laden der JSON-Daten: ', error);
+        // Set the dimensions of the siteContainer based on siteData.site.coordinates
+        siteContainer.style.position = 'relative';
+        siteContainer.style.width = (siteData.site.coordinates[2] - siteData.site.coordinates[0]) + 'px';
+        siteContainer.style.height = (siteData.site.coordinates[3] - siteData.site.coordinates[1]) + 'px';
+
+        // Accessing the inner array of devices
+        var devices = siteData.devices[0];
+        devices.forEach(function(device) {
+            // Überprüfen Sie, ob das Parkplatz-Objekt und die Koordinaten existieren
+            if (!device || !device.coordinates || device.coordinates.length !== 4) {
+                console.error('Fehlerhafte Parkplatz-Daten:', device);
+                return; // Überspringen Sie dieses Parkplatz-Objekt, da die Daten fehlerhaft sind
+            }
+
+            var el = document.createElement('div');
+            el.className = 'device';
+            el.style.backgroundColor = device.color;
+            el.style.position = 'absolute';
+            el.style.left = device.coordinates[0] + 'px';
+            el.style.top = device.coordinates[1] + 'px';
+            el.style.width = (device.coordinates[2] - device.coordinates[0]) + 'px';
+            el.style.height = (device.coordinates[3] - device.coordinates[1]) + 'px';
+            siteContainer.appendChild(el);
         });
-}
-
-// Aufrufen der createParkingMap Funktion, wenn die Webseite geladen wird
-window.onload = createParkingMap;
+    });
+});

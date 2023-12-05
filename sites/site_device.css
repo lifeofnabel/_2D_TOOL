@@ -1,63 +1,57 @@
-/* Reset some default styles */
-body, html {
-    margin: 0;
-    padding: 0;
+/* Grundlegende Seite Styling */
+body {
     font-family: Arial, sans-serif;
-}
-
-/* Style the editor container */
-#editor-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
     text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
 }
 
-/* Style the input groups */
-.input-group {
-    margin-bottom: 10px;
-}
-
-/* Style labels */
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-/* Style text input fields */
-input[type="text"] {
+/* Styling für das große Viereck (Site) */
+.site {
+    background-color: #ffff99; /* Hellgelb */
+    position: relative;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    padding-bottom: 100%; /* Hält das Viereck quadratisch */
 }
 
-/* Style the file input */
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+/* Styling für die kleinen Vierecke (Devices) */
+.device {
+    position: absolute;
+    background-color: #808080; /* Standard Grau */
+    border: 1px solid #000;
 }
 
-/* Style the "Save" button */
-.action-button {
-    background-color: #007BFF;
+/* Farben für spezielle Devices */
+.device.red {
+    background-color: #ff0000; /* Rot */
+}
+
+.device.green {
+    background-color: #00ff00; /* Grün */
+}
+
+/* Styling für Formularelemente und Buttons */
+input, select, button {
+    margin: 10px;
+    padding: 5px;
+}
+
+/* Styling für den "Generate" Button */
+.generate-button {
+    background-color: #4CAF50; /* Grün */
     color: white;
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
 }
 
-.action-button:hover {
-    background-color: #0056b3;
+.generate-button:hover {
+    background-color: #45a049;
 }

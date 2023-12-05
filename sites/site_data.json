@@ -1,7 +1,19 @@
 {
-  "site": 0,
-  "upperLeft": 0.0,
-  "lowerLeft": 0.0,
-  "upperRight": 0.0,
-  "lowerRight": 0.0
+  "site": {
+    "coordinates": [0, 0, 5000, 5000]
+  },
+  "devices": [
+    {
+      "coordinates": [100, 100, 500, 500],
+      "color": "gray"
+    },
+    {
+      "coordinates": [600, 100, 1000, 500],
+      "color": "red"
+    },
+    {
+      "coordinates": [1100, 100, 1500, 500],
+      "color": "green"
+    }
+  ]
 }
