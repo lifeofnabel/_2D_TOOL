@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parkplatzkarte</title>
+    <style>
+        #parkingMap {
+            border: 1px solid black;
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="parkingMap"></canvas>
+<script>
+        // Funktion zum Zeichnen eines Vierecks
+        function drawRectangle(context, x, y, width, height) {
+            context.beginPath();
+            context.rect(x, y, width, height);
+            context.fillStyle = 'rgba(0, 128, 0, 0.5)';
+            context.fill();
+            context.lineWidth = 2;
+            context.strokeStyle = 'black';
+            context.stroke();
+        }
+
+        // Hauptfunktion zum Erstellen der Parkplatzkarte
+        function createParkingMap() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const canvas = document.getElementById('parkingMap');
+                    const context = canvas.getContext('2d');
+
+                    // Durchlaufen jedes Parkplatzes in der JSON-Datei
+                    data.forEach(item => {
+                        const parkLot = item.site.parkLot;
+
+                        // Koordinaten und Größenberechnung (Beispielhaft)
+                        const x = 100; // Startposition X
+                        const y = 100; // Startposition Y
+                        const width = 200; // Breite des Parkplatzes
+                        const height = 100; // Höhe des Parkplatzes
+
+                        // Zeichnen des Parkplatzes
+                        drawRectangle(context, x, y, width, height);
+
+                        // Weitere Logik zur Positionierung weiterer Parkplätze
+                        // ...
+                    });
+                })
+                .catch(error => {
+                    console.error('Fehler beim Laden der JSON-Daten: ', error);
+                });
+        }
+
+        // Aufrufen der createParkingMap Funktion, wenn die Webseite geladen wird
+        window.onload = createParkingMap;
+    </script>
+</body>
+</html>

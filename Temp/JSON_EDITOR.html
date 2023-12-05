@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Editor</title>
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body>
+<div id="editor-container">
+    <h1>2D-Tool Values</h1>
+    <form id="jsonEditorForm">
+        <!-- Street Inputs -->
+        <div class="input-group" id="street-inputs">
+            <h2>Street:</h2>
+            <label for="upperLeftLatStreet">Upper Left Latitude:</label>
+            <input type="text" id="upperLeftLatStreet" name="upperLeftLatStreet">
+            <label for="upperLeftLongStreet">Upper Left Longitude:</label>
+            <input type="text" id="upperLeftLongStreet" name="upperLeftLongStreet">
+
+            <label for="lowerLeftLatStreet">Lower Left Latitude:</label>
+            <input type="text" id="lowerLeftLatStreet" name="lowerLeftLatStreet">
+            <label for="lowerLeftLongStreet">Lower Left Longitude:</label>
+            <input type="text" id="lowerLeftLongStreet" name="lowerLeftLongStreet">
+
+            <label for="upperRightLatStreet">Upper Right Latitude:</label>
+            <input type="text" id="upperRightLatStreet" name="upperRightLatStreet">
+            <label for="upperRightLongStreet">Upper Right Longitude:</label>
+            <input type="text" id="upperRightLongStreet" name="upperRightLongStreet">
+
+            <label for="lowerRightLatStreet">Lower Right Latitude:</label>
+            <input type="text" id="lowerRightLatStreet" name="lowerRightLatStreet">
+            <label for="lowerRightLongStreet">Lower Right Longitude:</label>
+            <input type="text" id="lowerRightLongStreet" name="lowerRightLongStreet">
+        </div>
+
+        <!-- Device Inputs -->
+        <div class="input-group" id="device-inputs">
+            <h2>Device:</h2>
+            <label for="upperLeftLatDevice">Upper Left Latitude:</label>
+            <input type="text" id="upperLeftLatDevice" name="upperLeftLatDevice">
+            <label for="upperLeftLongDevice">Upper Left Longitude:</label>
+            <input type="text" id="upperLeftLongDevice" name="upperLeftLongDevice">
+
+            <label for="lowerLeftLatDevice">Lower Left Latitude:</label>
+            <input type="text" id="lowerLeftLatDevice" name="lowerLeftLatDevice">
+            <label for="lowerLeftLongDevice">Lower Left Longitude:</label>
+            <input type="text" id="lowerLeftLongDevice" name="lowerLeftLongDevice">
+
+            <label for="upperRightLatDevice">Upper Right Latitude:</label>
+            <input type="text" id="upperRightLatDevice" name="upperRightLatDevice">
+            <label for="upperRightLongDevice">Upper Right Longitude:</label>
+            <input type="text" id="upperRightLongDevice" name="upperRightLongDevice">
+
+            <label for="lowerRightLatDevice">Lower Right Latitude:</label>
+            <input type="text" id="lowerRightLatDevice" name="lowerRightLatDevice">
+            <label for="lowerRightLongDevice">Lower Right Longitude:</label>
+            <input type="text" id="lowerRightLongDevice" name="lowerRightLongDevice">
+        </div>
+
+        <!-- Buttons Container -->
+        <div class="buttons-container">
+            <button class="button" id="addDeviceButton">Click to add new Device +</button>
+            <button type="button" id="updateJsonButton" class="button action-button">Update JSON</button>
+            <button type="button" id="review2dButton" class="button action-button" onclick="window.location.href='index.html';">Review 2D</button>
+            <button type="button" id="uploadDataButton" class="button action-button">Upload Data</button>
+        </div>
+
+    </form>
+</div>
+<script src="script_2.js"></script>
+<script src="script_3.js"></script>
+
+</body>
+</html>

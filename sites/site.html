@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site_device.css">
+    <title>Modern Input Form</title>
+</head>
+<body>
+<div id="editor-container">
+    <div class="input-group">
+        <label for="site">Site (int value):</label>
+        <input type="text" id="site" name="site">
+    </div>
+    <div class="input-group">
+        <label for="upperLeft">Upper Left (double value):</label>
+        <input type="text" id="upperLeft" name="upperLeft">
+    </div>
+    <div class="input-group">
+        <label for="lowerLeft">Lower Left (double value):</label>
+        <input type="text" id="lowerLeft" name="lowerLeft">
+    </div>
+    <div class="input-group">
+        <label for="upperRight">Upper Right (double value):</label>
+        <input type="text" id="upperRight" name="upperRight">
+    </div>
+    <div class="input-group">
+        <label for="lowerRight">Lower Right (double value):</label>
+        <input type="text" id="lowerRight" name="lowerRight">
+    </div>
+    <div class="input-group">
+        <label for="fileInput">Select Text File:</label>
+        <input type="file" id="fileInput">
+    </div>
+    <div class="buttons-container">
+        <div class="button action-button" onclick="saveData()">Save</div>
+    </div>
+</div>
+<script src="site_script.js"></script>
+</body>
+</html>

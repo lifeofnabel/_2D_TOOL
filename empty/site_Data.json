@@ -1,0 +1,7 @@
+-start-
+site:int_value;
+upperLeft:double_value;
+lowerLeft:double_value;
+upperRight:double_value;
+lowerRight:double_value;
+-end-
