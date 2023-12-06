@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #EEE8AA;
+}
+
+#siteContainer {
+    position: relative;
+    width: 100vw; /* Nutzt die volle Bildschirmbreite */
+    height: auto; /* Behält das Seitenverhältnis bei */
+    max-width: 1000px; /* Maximalbreite für größere Bildschirme */
+    border: 1px solid black; /* Zum Visualisieren des 'site'-Rechtecks */
+    background-color: #B0C4DE;
+
+}
+
+.device {
+    position: absolute;
+    border: 1px solid black; /* Optional, zur besseren Sichtbarkeit */
+}

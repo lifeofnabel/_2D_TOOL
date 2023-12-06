@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('data.json')
+    fetch('data_2.json')
     .then(response => response.json())
     .then(jsonData => {
         var siteContainer = document.getElementById('siteContainer');
@@ -20,10 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Accessing the inner array of devices
         var devices = siteData.devices[0];
         devices.forEach(function(device) {
-            // Überprüfen Sie, ob das Parkplatz-Objekt und die Koordinaten existieren
             if (!device || !device.coordinates || device.coordinates.length !== 4) {
                 console.error('Fehlerhafte Parkplatz-Daten:', device);
-                return; // Überspringen Sie dieses Parkplatz-Objekt, da die Daten fehlerhaft sind
+                return;
             }
 
             var el = document.createElement('div');
@@ -32,8 +31,42 @@ document.addEventListener('DOMContentLoaded', function() {
             el.style.position = 'absolute';
             el.style.left = device.coordinates[0] + 'px';
             el.style.top = device.coordinates[1] + 'px';
-            el.style.width = (device.coordinates[2] - device.coordinates[0]) + 'px';
-            el.style.height = (device.coordinates[3] - device.coordinates[1]) + 'px';
+            var width = device.coordinates[2] - device.coordinates[0];
+            var height = device.coordinates[3] - device.coordinates[1];
+            el.style.width = width + 'px';
+            el.style.height = height + 'px';
+
+            // Add the ID of the device
+            var idText = document.createElement('span');
+            idText.textContent = device.id;
+            idText.style.position = 'absolute';
+            idText.style.left = '5px';
+            idText.style.top = '5px';
+            el.appendChild(idText);
+
+            // Add disabled and electricity icons if applicable, with size as 10% of the rectangle
+            var iconSize = { width: width * 0.2, height: height * 0.3 };
+            if (device.disabled) {
+                var disabledIcon = document.createElement('img');
+                disabledIcon.src = 'disabled.png';
+                disabledIcon.style.position = 'absolute';
+                disabledIcon.style.right = '5px';
+                disabledIcon.style.top = '5px';
+                disabledIcon.style.width = iconSize.width + 'px';
+                disabledIcon.style.height = iconSize.height + 'px';
+                el.appendChild(disabledIcon);
+            }
+            if (device.electricity) {
+                var electricityIcon = document.createElement('img');
+                electricityIcon.src = 'electricity.png';
+                electricityIcon.style.position = 'absolute';
+                electricityIcon.style.right = '5px';
+                electricityIcon.style.bottom = '5px';
+                electricityIcon.style.width = iconSize.width + 'px';
+                electricityIcon.style.height = iconSize.height + 'px';
+                el.appendChild(electricityIcon);
+            }
+
             siteContainer.appendChild(el);
         });
     });

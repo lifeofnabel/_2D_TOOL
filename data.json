@@ -33,7 +33,7 @@
         "name": "Parkplatz 3LL",
         "coordinates": [10, 340, 210, 440],
         "color": "green",
-        "disabled": true,
+        "disabled": false,
         "electricity": false
       },
       {
@@ -50,7 +50,7 @@
         "coordinates": [270, 120, 480, 220],
         "color": "grey",
         "disabled": false,
-        "electricity": false
+        "electricity": true
       },
       {
         "id": "3R",
@@ -65,8 +65,8 @@
         "name": "Parkplatz 4R",
         "coordinates": [270, 340, 480, 440],
         "color": "green",
-        "disabled": false,
-        "electricity": false
+        "disabled": true,
+        "electricity": true
       }
 
     ]

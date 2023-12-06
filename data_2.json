@@ -1,0 +1,59 @@
+
+[
+  {
+    "site": {
+      "coordinates": [0, 0, 800, 500]
+    },
+    "devices": [[
+      {
+        "id": "1T",
+        "name": "Parkplatz 1T",
+        "coordinates": [10, 10, 140, 210],
+        "color": "red",
+        "disabled": true,
+        "electricity": false
+      },
+      {
+        "id": "2T",
+        "name": "Parkplatz 2T",
+        "coordinates": [150, 10, 280, 210],
+        "color": "green",
+        "disabled": true,
+        "electricity": true
+      },
+      {
+        "id": "3T",
+        "name": "Parkplatz 3T",
+        "coordinates": [290, 10, 430, 210],
+        "color": "red",
+        "disabled": true,
+        "electricity": false
+      },
+      {
+        "id": "3TT",
+        "name": "Parkplatz 3TT",
+        "coordinates": [440, 10, 580, 210],
+        "color": "green",
+        "disabled": false,
+        "electricity": false
+      },
+
+      {
+        "id": "3B",
+        "name": "Parkplatz 3B",
+        "coordinates": [280, 270, 410, 480],
+        "color": "green",
+        "disabled": false,
+        "electricity": false
+      },
+      {
+        "id": "4B",
+        "name": "Parkplatz 4B",
+        "coordinates": [510, 270, 640, 480],
+        "color": "grey",
+        "disabled": true,
+        "electricity": true
+      }
+    ]]
+  }
+]
